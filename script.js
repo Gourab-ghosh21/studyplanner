@@ -87,14 +87,16 @@ function renderTasks() {
 function updateProgress() {
   if (tasks.length === 0) {
     progressText.textContent = "Progress: 0%";
+    progressBar.style.width = "0%";
     return;
   }
 
   const completed = tasks.filter(t => t.completed).length;
   const percent = Math.round((completed / tasks.length) * 100);
-  progressText.textContent = `Progress: ${percent}%`;
-}
 
+  progressText.textContent = `Progress: ${percent}%`;
+  progressBar.style.width = percent + "%";
+}
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
