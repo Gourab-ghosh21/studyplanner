@@ -1,3 +1,4 @@
+const progressBar = document.getElementById("progressBar");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const progressText = document.getElementById("progressText");
