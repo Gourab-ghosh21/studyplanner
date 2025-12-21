@@ -37,3 +37,12 @@ li {
   display: flex;
   justify-content: space-between;
 }
+li {
+  list-style: none;
+  padding: 8px;
+  margin: 5px 0;
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
