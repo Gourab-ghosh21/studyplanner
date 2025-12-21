@@ -46,3 +46,18 @@ li {
   justify-content: space-between;
   align-items: center;
 }
+.progress-container {
+  width: 100%;
+  height: 12px;
+  background: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: #4CAF50;
+  transition: width 0.3s ease;
+}
