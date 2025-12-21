@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>📚 Study Planner</h1>
+
+  <!-- Add Task -->
+  <div class="card">
+    <input type="text" id="taskTitle" placeholder="Task name">
+    <input type="date" id="taskDate">
+    <input type="number" id="taskDuration" placeholder="Minutes">
+    <button id="addTaskBtn">Add Task</button>
+  </div>
+
+  <!-- Progress -->
+  <div class="card">
+    <p id="progressText">Progress: 0%</p>
+  </div>
+
+  <!-- Task List -->
+  <div class="card">
+    <h2>Tasks</h2>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
