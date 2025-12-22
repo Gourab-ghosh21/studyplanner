@@ -94,14 +94,24 @@ filterButtons.forEach(btn => {
 });
 function renderTasks() {
   taskList.innerHTML = "";
+let filteredTasks = tasks;
+const today = new Date();
+today.setHours(0, 0, 0, 0);
 
-  let filteredTasks = tasks;
+if (currentFilter === "today") {
+  const todayStr = today.toISOString().split("T")[0];
+  filteredTasks = tasks.filter(t => t.date === todayStr);
+}
 
-  if (currentFilter === "today") {
-    const today = new Date().toISOString().split("T")[0];
-    filteredTasks = tasks.filter(t => t.date === today);
-  }
+if (currentFilter === "upcoming") {
+  const nextWeek = new Date(today);
+  nextWeek.setDate(today.getDate() + 7);
 
+  filteredTasks = tasks.filter(t => {
+    const taskDate = new Date(t.date);
+    return taskDate >= today && taskDate <= nextWeek;
+  });
+}
   filteredTasks.forEach(task => {
     const li = document.createElement("li");
 
