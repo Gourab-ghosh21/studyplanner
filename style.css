@@ -61,3 +61,16 @@ li {
   background: #4CAF50;
   transition: width 0.3s ease;
 }
+.filter-btn {
+  padding: 6px 10px;
+  margin-right: 5px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.filter-btn.active {
+  background: #4CAF50;
+  color: white;
+}
