@@ -1,3 +1,4 @@
+const darkModeToggle = document.getElementById("darkModeToggle");
 const filterButtons = document.querySelectorAll(".filter-btn");
 let currentFilter = "all";
 const progressBar = document.getElementById("progressBar");
