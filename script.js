@@ -1,3 +1,5 @@
+const filterButtons = document.querySelectorAll(".filter-btn");
+let currentFilter = "all";
 const progressBar = document.getElementById("progressBar");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
