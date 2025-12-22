@@ -144,3 +144,18 @@ function renderTasks() {
     taskList.appendChild(li);
   });
 }
+const darkMode = localStorage.getItem("darkMode");
+
+if (darkMode === "enabled") {
+  document.body.classList.add("dark");
+}
+
+darkModeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
+});
