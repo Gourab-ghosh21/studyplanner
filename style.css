@@ -98,3 +98,24 @@ body.dark li {
 input, button {
   font-size: 16px;
 }
+@media (max-width: 500px) {
+  .card {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  .filter-btn {
+    margin-bottom: 5px;
+  }
+}
+button:active {
+  transform: scale(0.97);
+}
