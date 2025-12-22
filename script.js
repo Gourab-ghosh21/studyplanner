@@ -6,6 +6,7 @@ const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const progressText = document.getElementById("progressText");
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let editTaskId = null;
 // Initial render
 renderTasks();
 updateProgress();
