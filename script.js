@@ -202,3 +202,12 @@ darkModeToggle.addEventListener("click", () => {
   }
 });
 li.appendChild(editBtn);
+const FILES_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./style.css",
+  "./script.js",
+  "./manifest.json",
+  "./taskiio.png",
+  "./taskio.png"
+];
