@@ -7,6 +7,9 @@ const taskList = document.getElementById("taskList");
 const progressText = document.getElementById("progressText");
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let editTaskId = null;
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
 // Initial render
 renderTasks();
 updateProgress();
