@@ -14,21 +14,35 @@ addTaskBtn.addEventListener("click", () => {
   const title = document.getElementById("taskTitle").value;
   const date = document.getElementById("taskDate").value;
   const duration = document.getElementById("taskDuration").value;
+
   if (!title || !date || !duration) {
     alert("Please fill all fields");
     return;
   }
-  const task = {
-    id: Date.now(),
-    title,
-    date,
-    duration,
-    completed: false
-  };
-  tasks.push(task);
+
+  if (editTaskId) {
+    // EDIT MODE
+    const task = tasks.find(t => t.id === editTaskId);
+    task.title = title;
+    task.date = date;
+    task.duration = duration;
+    editTaskId = null;
+    addTaskBtn.textContent = "Add Task";
+  } else {
+    // ADD MODE
+    tasks.push({
+      id: Date.now(),
+      title,
+      date,
+      duration,
+      completed: false
+    });
+  }
+
   saveTasks();
   renderTasks();
   updateProgress();
+
   document.getElementById("taskTitle").value = "";
   document.getElementById("taskDate").value = "";
   document.getElementById("taskDuration").value = "";
@@ -63,6 +77,20 @@ function renderTasks() {
       renderTasks();
       updateProgress();
     });
+    const editBtn = document.createElement("button");
+editBtn.textContent = "✏️";
+editBtn.style.border = "none";
+editBtn.style.background = "transparent";
+editBtn.style.cursor = "pointer";
+
+editBtn.addEventListener("click", () => {
+  document.getElementById("taskTitle").value = task.title;
+  document.getElementById("taskDate").value = task.date;
+  document.getElementById("taskDuration").value = task.duration;
+
+  editTaskId = task.id;
+  addTaskBtn.textContent = "Update Task";
+});
     left.appendChild(checkbox);
     left.appendChild(span);
     li.appendChild(left);
@@ -170,3 +198,4 @@ darkModeToggle.addEventListener("click", () => {
     localStorage.setItem("darkMode", "disabled");
   }
 });
+li.appendChild(editBtn);
