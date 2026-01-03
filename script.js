@@ -1,15 +1,4 @@
-const darkModeToggle = document.getElementById("darkModeToggle");
-const filterButtons = document.querySelectorAll(".filter-btn");
-let currentFilter = "all";
-const progressBar = document.getElementById("progressBar");
-const addTaskBtn = document.getElementById("addTaskBtn");
-const taskList = document.getElementById("taskList");
-const progressText = document.getElementById("progressText");
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-let editTaskId = null;
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
+
 // Initial render
 renderTasks();
 updateProgress();
