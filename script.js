@@ -200,14 +200,4 @@ darkModeToggle.addEventListener("click", () => {
   } else {
     localStorage.setItem("darkMode", "disabled");
   }
-});
-li.appendChild(editBtn);
-const FILES_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./style.css",
-  "./script.js",
-  "./manifest.json",
-  "./taskiio.png",
-  "./taskio.png"
-];
+
