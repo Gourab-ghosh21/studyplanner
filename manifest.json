@@ -1,16 +1,4 @@
-{
-  "name": "Taskio",
-  "short_name": "Taskio",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#4CAF50",
-  "icons": [
-    {
-      "src": "taskio.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
+
     {
       "src": "taskio.png",
       "sizes": "512x512",
